@@ -1,0 +1,12 @@
+/* ARA FINANCIAL ALCHEMY — PERFORMANCE */
+body{background-attachment:scroll!important}
+body::before{animation:none!important;filter:blur(18px) saturate(105%)!important}
+.alchemist-lab::before,.alchemist-lab::after,.chemical-formula,.ore-particle,.ara-spark{animation:none!important}
+.transformation-line .reagent{backdrop-filter:none!important}
+.site-header{backdrop-filter:none!important}
+@media (hover:none){
+  .btn:hover,.card:hover,.principle:hover{transform:none!important}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
