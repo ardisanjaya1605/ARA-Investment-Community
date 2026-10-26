@@ -1,0 +1,461 @@
+/* ARA FINANCIAL ALCHEMY — RESPONSIVE */
+
+
+:root{
+  --bg:#f6f3eb; --paper:#fffdf8; --ink:#15171a; --muted:#6f716f;
+  --gold:#b88a3b; --gold2:#d8b66a; --line:#ded7c9; --green:#1f665d;
+  --shadow:0 22px 60px rgba(34,29,19,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+
+.site-header{
+ position:sticky;top:0;z-index:100;height:76px;padding:0 clamp(20px,5vw,76px);
+ display:flex;align-items:center;justify-content:space-between;gap:30px;
+ background:rgba(246,243,235,.92);backdrop-filter:blur(18px);
+ border-bottom:1px solid rgba(184,138,59,.22)
+}
+.brand{display:flex;align-items:center;min-width:155px;height:62px;overflow:visible}
+.brand img{display:block;width:145px;height:60px;object-fit:contain;object-position:left center}
+.nav{display:flex;align-items:center;gap:28px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#65665f}
+.nav a{position:relative;padding:27px 0}
+.nav a:hover,.nav a.active{color:var(--ink)}
+.nav a.active:after{content:"";position:absolute;left:0;right:0;bottom:18px;height:1px;background:var(--gold)}
+.header-cta{border:1px solid var(--ink);padding:10px 15px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:transparent}
+.header-cta:hover{background:var(--ink);color:white}
+
+.hero{
+ min-height:calc(100vh - 76px);padding:85px clamp(24px,7vw,110px) 65px;
+ display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:5vw;
+ background:
+ radial-gradient(circle at 82% 44%,rgba(184,138,59,.18),transparent 24%),
+ linear-gradient(135deg,#faf8f2,#f0ece2)
+}
+.kicker{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font:400 clamp(52px,6.4vw,90px)/.94 Georgia,serif;letter-spacing:-.045em}
+.hero h1 em,.section-title em{color:var(--gold);font-style:italic}
+.hero-copy{max-width:620px;margin-top:24px;color:var(--muted);font-size:14px;line-height:1.9}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border:1px solid var(--ink);background:transparent;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--gold);border-color:var(--gold)}
+.btn.light{border-color:var(--line);background:rgba(255,255,255,.65)}
+
+.alchemy-stage{min-height:430px;display:grid;place-items:center;position:relative}
+.orbit{width:min(420px,82vw);aspect-ratio:1;border:1px solid rgba(184,138,59,.45);border-radius:50%;position:relative;display:grid;place-items:center;background:radial-gradient(circle,rgba(255,255,255,.78),rgba(255,255,255,0) 62%);box-shadow:0 0 0 28px rgba(184,138,59,.035),var(--shadow)}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(184,138,59,.3);border-radius:50%}
+.orbit:before{inset:52px}.orbit:after{inset:105px}
+.core{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#e7ca84,#8f6222);box-shadow:inset 10px 8px 20px rgba(255,255,255,.5),0 20px 45px rgba(102,69,21,.25);font:48px Georgia;color:#fff}
+.formula{position:absolute;font:12px Georgia;color:#8d6a32;letter-spacing:.08em}
+.f1{top:11%;right:1%}.f2{bottom:12%;left:1%}.f3{left:-2%;top:49%}
+
+.section{padding:88px clamp(24px,7vw,110px);border-top:1px solid var(--line)}
+.section.paper{background:var(--paper)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px}
+.section-title{font:400 clamp(38px,4.7vw,62px)/1.02 Georgia,serif;letter-spacing:-.03em}
+.section-copy{max-width:680px;color:var(--muted);font-size:13px;line-height:1.9;margin-top:18px}
+.philosophy{display:grid;grid-template-columns:.75fr 1.25fr;gap:8vw}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:40px}
+.principle,.card{border:1px solid var(--line);background:#fff;padding:24px;transition:.25s}
+.principle:hover,.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(184,138,59,.55)}
+.num{font:28px Georgia;color:var(--gold)}
+.principle h3,.card h3{font:400 22px Georgia;margin:10px 0 8px}
+.muted{font-size:11px;color:var(--muted);line-height:1.75}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.card .tag{font-size:8px;letter-spacing:.17em;color:var(--gold);text-transform:uppercase}
+.card .card-icon{width:42px;height:42px;border:1px solid rgba(184,138,59,.5);display:grid;place-items:center;margin-bottom:18px;color:var(--gold);font:20px Georgia}
+.card .btn{margin-top:18px}
+
+.product-card{position:relative;overflow:hidden}
+.product-card:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+.product-meta{font:22px Georgia;margin:14px 0 7px}
+.product-card ul{margin:13px 0 0;padding-left:18px;color:var(--muted);font-size:11px;line-height:1.9}
+
+.calculator-wrap{background:#17191b;color:#fff}
+.calculator-wrap .section-copy{color:#a9adb0}
+.calcs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.calc{background:#202326;border:1px solid rgba(255,255,255,.1);padding:25px}
+.calc h3{font:400 25px Georgia;margin-bottom:18px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:9px;color:#a9adb0;margin-bottom:6px}
+.field input,.field select{width:100%;padding:11px 12px;background:#17191b;border:1px solid rgba(255,255,255,.14);color:#fff;outline:none}
+.result{margin-top:17px;padding:15px;border:1px solid rgba(216,182,106,.45);background:rgba(184,138,59,.06)}
+.result strong{display:block;color:var(--gold2);font:25px Georgia}
+.result span{font-size:9px;color:#969b9f}
+
+.library-card .cover{height:135px;background:linear-gradient(135deg,#1b1d1f,#87652e);display:flex;align-items:flex-end;padding:17px;color:#fff;font:21px Georgia}
+.library-card .body{padding:19px}
+.pill{display:inline-block;padding:5px 8px;background:#f1ece1;color:#7a5a27;font-size:8px;letter-spacing:.09em;text-transform:uppercase}
+
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw;align-items:start}
+.form{padding:27px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(30,25,17,.05)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:block;font-size:9px;color:#666;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);background:#fbfaf6;outline:none}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold)}
+.form textarea{min-height:95px;resize:vertical}
+.full{grid-column:1/-1}
+.status{display:none;margin-top:10px;padding:10px;font-size:10px}
+.status.ok{display:block;background:#eaf5f2;color:var(--green)}
+.status.err{display:block;background:#fff0ef;color:#9b4039}
+
+footer{padding:28px clamp(24px,7vw,110px);background:#151719;color:#92979a;display:flex;justify-content:space-between;gap:20px;font-size:9px}
+footer .gold{font:18px Georgia;color:var(--gold2)}
+
+@media(max-width:900px){
+ .nav{display:none}.hero,.philosophy,.contact{grid-template-columns:1fr}
+ .hero{padding-top:65px}.alchemy-stage{min-height:350px}
+ .grid3,.principles{grid-template-columns:1fr 1fr}.calcs{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .site-header{height:68px;padding:0 18px}.brand{min-width:125px;height:58px}
+ .brand img{width:125px;height:52px}
+ .header-cta{padding:8px 10px;font-size:8px}
+ .hero,.section{padding-left:20px;padding-right:20px}
+ .hero h1{font-size:55px}.grid3,.principles,.formgrid{grid-template-columns:1fr}
+ .full{grid-column:auto}footer{display:block}
+ footer div+div{margin-top:12px}
+}
+
+/* ARA SAFETY + MOTION SYSTEM v3 */
+:root{--safe:#2c746a;--safe-soft:#eaf5f2}
+body{overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-25%;z-index:-3;pointer-events:none;background:radial-gradient(circle at 15% 20%,rgba(216,182,106,.12),transparent 20%),radial-gradient(circle at 85% 70%,rgba(31,102,93,.08),transparent 24%);animation:araAmbient 18s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(21,23,26,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(21,23,26,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
+.site-header{transition:box-shadow .3s ease,background .3s ease}
+.site-header.scrolled{box-shadow:0 12px 35px rgba(34,29,19,.08);background:rgba(246,243,235,.82)}
+.hero{position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{width:360px;height:360px;right:-110px;top:-100px;border:1px solid rgba(184,138,59,.16);box-shadow:0 0 90px rgba(184,138,59,.08);animation:araFloat 9s ease-in-out infinite}
+.hero::after{width:180px;height:180px;left:-90px;bottom:-70px;border:1px solid rgba(31,102,93,.12);animation:araFloat 12s ease-in-out infinite reverse}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+.reveal.is-visible{opacity:1;transform:none}
+.alchemy-stage{isolation:isolate}.orbit{animation:araOrbitBreath 7s ease-in-out infinite}
+.orbit .formula{animation:araFormula 5s ease-in-out infinite alternate}.orbit .f2{animation-delay:-1.7s}.orbit .f3{animation-delay:-3s}
+.core{animation:araCore 5s ease-in-out infinite}.orbit::before{animation:araSpin 24s linear infinite}.orbit::after{animation:araSpin 17s linear infinite reverse}
+.btn,.card,.principle,.form,.header-cta{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,.header-cta:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(44,116,106,.25);outline-offset:3px}
+.card,.principle{position:relative;overflow:hidden}
+.card::after,.principle::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s ease}
+.card:hover::after,.principle:hover::after{transform:translateX(120%)}
+.security-strip{display:flex;align-items:center;justify-content:center;gap:9px;min-height:34px;padding:8px 20px;background:rgba(234,245,242,.82);border-bottom:1px solid rgba(44,116,106,.12);color:#35655e;font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.security-dot{width:7px;height:7px;border-radius:50%;background:#4f9b8d;box-shadow:0 0 0 5px rgba(79,155,141,.10);animation:araPulse 2.4s ease-in-out infinite}
+.security-note{letter-spacing:.02em;text-transform:none;font-size:10px;color:#60716e}
+.form{position:relative}.form::before{content:"Secure intake";position:absolute;right:18px;top:16px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--safe);background:var(--safe-soft);padding:5px 8px;border-radius:999px}
+.form-note{display:flex;gap:8px;align-items:flex-start;margin-top:13px;font-size:9px;line-height:1.6;color:#717674}.form-note b{color:var(--safe)}
+.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+@keyframes araAmbient{to{transform:translate3d(2%,1%,0) scale(1.03)}}
+@keyframes araFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-16px,12px,0)}}
+@keyframes araOrbitBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.018)}}
+@keyframes araCore{0%,100%{transform:translateY(0);box-shadow:inset 10px 8px 20px rgba(255,255,255,.5),0 20px 45px rgba(102,69,21,.25)}50%{transform:translateY(-7px);box-shadow:inset 10px 8px 20px rgba(255,255,255,.55),0 28px 55px rgba(102,69,21,.20)}}
+@keyframes araSpin{to{transform:rotate(360deg)}}@keyframes araFormula{to{transform:translateY(-5px);opacity:.72}}@keyframes araPulse{50%{box-shadow:0 0 0 8px rgba(79,155,141,.03);opacity:.7}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
+
+
+
+/* ARA LIVING ELEGANCE — richer color atmosphere */
+:root{
+  --ara-cream:#f6f3eb;
+  --ara-gold:#b8944e;
+  --ara-gold-soft:#d8bd7b;
+  --ara-teal:#2f756d;
+  --ara-sage:#789a86;
+  --ara-rose:#c98d82;
+  --ara-blue:#718ea6;
+}
+
+body{
+  background:
+    radial-gradient(circle at 8% 12%, rgba(184,148,78,.18), transparent 24%),
+    radial-gradient(circle at 91% 10%, rgba(47,117,109,.16), transparent 25%),
+    radial-gradient(circle at 82% 78%, rgba(201,141,130,.13), transparent 28%),
+    radial-gradient(circle at 12% 86%, rgba(113,142,166,.11), transparent 27%),
+    linear-gradient(135deg,#f8f6ef 0%,#f2efe6 48%,#f7f4ec 100%);
+  background-attachment:fixed;
+}
+
+/* Living color washes */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-3;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 18% 30%, rgba(216,189,123,.22), transparent 28%),
+    radial-gradient(ellipse at 76% 22%, rgba(47,117,109,.18), transparent 26%),
+    radial-gradient(ellipse at 72% 74%, rgba(201,141,130,.16), transparent 30%),
+    radial-gradient(ellipse at 25% 82%, rgba(120,154,134,.13), transparent 26%);
+  filter:blur(30px) saturate(115%);
+  animation:araColorBreath 20s ease-in-out infinite alternate;
+}
+
+/* Fine luminous veil */
+body::after{
+  background:
+    linear-gradient(rgba(55,47,34,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(55,47,34,.025) 1px,transparent 1px),
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.58),transparent 38%);
+  background-size:42px 42px,42px 42px,100% 100%;
+  mix-blend-mode:multiply;
+  opacity:.62;
+}
+
+/* Section color breathing */
+section{
+  position:relative;
+  isolation:isolate;
+}
+section::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  left:-260px;
+  top:10%;
+  z-index:-1;
+  background:radial-gradient(circle,rgba(184,148,78,.10),rgba(184,148,78,0) 68%);
+  filter:blur(12px);
+  animation:sectionGlow 14s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+section:nth-of-type(even)::before{
+  left:auto;
+  right:-270px;
+  background:radial-gradient(circle,rgba(47,117,109,.09),rgba(47,117,109,0) 68%);
+  animation-delay:-5s;
+}
+
+/* Hero becomes the visual focal point */
+.hero{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 76% 38%,rgba(184,148,78,.14),transparent 24%),
+    radial-gradient(circle at 88% 68%,rgba(47,117,109,.13),transparent 24%);
+}
+.hero::before{
+  width:480px;
+  height:480px;
+  border:1px solid rgba(184,148,78,.18);
+  box-shadow:0 0 90px rgba(184,148,78,.08);
+}
+.hero::after{
+  width:330px;
+  height:330px;
+  border:1px solid rgba(47,117,109,.16);
+  box-shadow:0 0 80px rgba(47,117,109,.07);
+}
+
+/* Elegant color sparks */
+.ara-spark{
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:.42;
+  filter:blur(.2px);
+  box-shadow:0 0 16px currentColor;
+  animation:araSparkFloat 9s ease-in-out infinite;
+}
+.ara-spark.gold{color:var(--ara-gold);background:currentColor}
+.ara-spark.teal{color:var(--ara-teal);background:currentColor}
+.ara-spark.rose{color:var(--ara-rose);background:currentColor}
+.ara-spark.blue{color:var(--ara-blue);background:currentColor}
+
+@keyframes araColorBreath{
+  0%{transform:translate3d(-2%,-1%,0) scale(1)}
+  50%{transform:translate3d(2%,1%,0) scale(1.04)}
+  100%{transform:translate3d(-1%,2%,0) scale(1.08)}
+}
+@keyframes sectionGlow{
+  0%{transform:translate3d(0,0,0) scale(.92);opacity:.55}
+  100%{transform:translate3d(35px,-18px,0) scale(1.08);opacity:1}
+}
+@keyframes araSparkFloat{
+  0%,100%{transform:translate3d(0,12px,0) scale(.8);opacity:.18}
+  45%{transform:translate3d(10px,-18px,0) scale(1);opacity:.55}
+  70%{transform:translate3d(-8px,-34px,0) scale(.72);opacity:.22}
+}
+@media (prefers-reduced-motion:reduce){
+  body::before,section::before,.ara-spark{animation:none!important}
+}
+
+
+
+/* =========================================================
+   ARA FINANCIAL ALCHEMIST — CHEMISTRY / MINING ATMOSPHERE
+   Concept: financial management as controlled alchemy.
+   ========================================================= */
+:root{
+  --alchemy-gold:#c5a15a;
+  --alchemy-brass:#9c7840;
+  --alchemy-copper:#a96d4c;
+  --alchemy-ore:#5f6f67;
+  --alchemy-mineral:#8e9b91;
+  --alchemy-teal:#326f69;
+  --alchemy-ink:#2d302c;
+}
+
+body{
+  background:
+    radial-gradient(circle at 12% 16%,rgba(197,161,90,.16),transparent 23%),
+    radial-gradient(circle at 88% 18%,rgba(50,111,105,.13),transparent 24%),
+    radial-gradient(circle at 78% 82%,rgba(169,109,76,.11),transparent 25%),
+    radial-gradient(circle at 18% 84%,rgba(142,155,145,.12),transparent 24%),
+    linear-gradient(135deg,#f7f3e9 0%,#eee9dd 48%,#f7f4ec 100%);
+}
+
+/* Molecular/mineral background */
+body::before{
+  background:
+    radial-gradient(circle at 20% 25%,rgba(197,161,90,.18),transparent 18%),
+    radial-gradient(circle at 75% 28%,rgba(50,111,105,.14),transparent 20%),
+    radial-gradient(circle at 65% 78%,rgba(169,109,76,.12),transparent 22%),
+    radial-gradient(circle at 30% 78%,rgba(95,111,103,.11),transparent 18%);
+  filter:blur(34px) saturate(108%);
+  animation:alchemyAtmosphere 24s ease-in-out infinite alternate;
+}
+
+/* Periodic-table-like technical grid */
+body::after{
+  background:
+    linear-gradient(rgba(75,68,54,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(75,68,54,.028) 1px,transparent 1px),
+    radial-gradient(circle at 50% 10%,rgba(255,255,255,.62),transparent 42%);
+  background-size:46px 46px,46px 46px,100% 100%;
+  opacity:.55;
+}
+
+/* Alchemist formula atmosphere */
+.alchemist-lab{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+.alchemist-lab::before,
+.alchemist-lab::after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(156,120,64,.15);
+  border-radius:50%;
+  animation:alchemyOrbit 28s linear infinite;
+}
+.alchemist-lab::before{
+  width:520px;height:520px;
+  right:-160px;top:8%;
+  box-shadow:inset 0 0 0 34px rgba(197,161,90,.025);
+}
+.alchemist-lab::after{
+  width:290px;height:290px;
+  left:-90px;bottom:6%;
+  border-color:rgba(50,111,105,.13);
+  animation-direction:reverse;
+  animation-duration:22s;
+}
+
+/* Formula labels */
+.chemical-formula{
+  position:absolute;
+  font-family:Georgia,serif;
+  letter-spacing:.12em;
+  font-size:11px;
+  color:rgba(70,68,58,.25);
+  white-space:nowrap;
+  animation:formulaDrift 16s ease-in-out infinite alternate;
+}
+.chemical-formula b{
+  color:rgba(156,120,64,.42);
+  font-weight:600;
+}
+.formula-1{right:7%;top:17%}
+.formula-2{left:5%;top:38%;animation-delay:-5s}
+.formula-3{right:12%;bottom:23%;animation-delay:-9s}
+.formula-4{left:10%;bottom:13%;animation-delay:-3s}
+
+/* Mineral particles */
+.ore-particle{
+  position:absolute;
+  width:5px;height:5px;
+  border-radius:50%;
+  background:var(--alchemy-gold);
+  box-shadow:0 0 14px rgba(197,161,90,.55);
+  opacity:.28;
+  animation:oreFloat 11s ease-in-out infinite;
+}
+.ore-particle:nth-child(2n){background:var(--alchemy-teal);box-shadow:0 0 14px rgba(50,111,105,.45)}
+.ore-particle:nth-child(3n){background:var(--alchemy-copper);box-shadow:0 0 14px rgba(169,109,76,.42)}
+
+.alchemy-card{
+  position:relative;
+  overflow:hidden;
+}
+.alchemy-card::after{
+  content:"";
+  position:absolute;
+  width:160px;height:160px;
+  right:-70px;top:-80px;
+  border:1px solid rgba(197,161,90,.15);
+  border-radius:50%;
+  box-shadow:0 0 0 22px rgba(197,161,90,.025),0 0 0 45px rgba(197,161,90,.018);
+  pointer-events:none;
+}
+
+/* Financial transformation language */
+.transformation-line{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:18px auto;
+  color:rgba(60,58,49,.48);
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.transformation-line .reagent{
+  padding:7px 10px;
+  border:1px solid rgba(156,120,64,.18);
+  border-radius:999px;
+  background:rgba(255,255,255,.34);
+  backdrop-filter:blur(6px);
+}
+.transformation-line .arrow{
+  color:rgba(156,120,64,.6);
+}
+
+@keyframes alchemyAtmosphere{
+  0%{transform:translate3d(-1%,-1%,0) scale(1)}
+  50%{transform:translate3d(2%,1%,0) scale(1.035)}
+  100%{transform:translate3d(-2%,2%,0) scale(1.07)}
+}
+@keyframes alchemyOrbit{
+  from{transform:rotate(0deg) translateX(0)}
+  to{transform:rotate(360deg) translateX(0)}
+}
+@keyframes formulaDrift{
+  0%{transform:translate3d(0,8px,0);opacity:.18}
+  100%{transform:translate3d(8px,-10px,0);opacity:.38}
+}
+@keyframes oreFloat{
+  0%,100%{transform:translate3d(0,15px,0) scale(.7);opacity:.12}
+  50%{transform:translate3d(10px,-20px,0) scale(1);opacity:.42}
+}
+@media(max-width:700px){
+  .chemical-formula{font-size:9px}
+  .transformation-line{gap:7px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  body::before,.alchemist-lab::before,.alchemist-lab::after,
+  .chemical-formula,.ore-particle{animation:none!important}
+}
+
